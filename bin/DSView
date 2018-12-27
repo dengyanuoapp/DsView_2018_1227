@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# ../runDSview_/bin/DSView
+
+aa1=$(realpath ${0})
+aa2=$(dirname ${aa1})/..
+aa3=$(realpath ${aa2}/runDSview_/bin/)
+aa4=$(realpath ${aa2}/runDSview_/lib/)
+aa9=$(basename ${0})
+
+bb1=${aa3}/${aa9}
+
+
+echo " LD_LIBRARY_PATH=${aa4} ${bb1} $*"
+       LD_LIBRARY_PATH=${aa4} ${bb1} $* 
+

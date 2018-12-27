@@ -1,0 +1,185 @@
+##
+## This file is part of the libsigrokdecode project.
+##
+## Copyright (C) 2012 Iztok Jeras <iztok.jeras@gmail.com>
+##
+## This program is free software; you can redistribute it and/or modify
+## it under the terms of the GNU General Public License as published by
+## the Free Software Foundation; either version 2 of the License, or
+## (at your option) any later version.
+##
+## This program is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+## GNU General Public License for more details.
+##
+## You should have received a copy of the GNU General Public License
+## along with this program; if not, write to the Free Software
+## Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+##
+
+import sigrokdecode as srd
+
+# Dictionary of ROM commands and their names, next state.
+command = {
+    0x33: ['Read ROM'              , 'GET ROM'   ],
+    0x0f: ['Conditional read ROM'  , 'GET ROM'   ],
+    0xcc: ['Skip ROM'              , 'TRANSPORT' ],
+    0x55: ['Match ROM'             , 'GET ROM'   ],
+    0xf0: ['Search ROM'            , 'SEARCH ROM'],
+    0xec: ['Conditional search ROM', 'SEARCH ROM'],
+    0x3c: ['Overdrive skip ROM'    , 'TRANSPORT' ],
+    0x69: ['Overdrive match ROM'   , 'GET ROM'   ],
+}
+
+class Decoder(srd.Decoder):
+    api_version = 2
+    id = 'onewire_network'
+    name = '1-Wire network layer'
+    longname = '1-Wire serial communication bus (network layer)'
+    desc = 'Bidirectional, half-duplex, asynchronous serial bus.'
+    license = 'gplv2+'
+    inputs = ['onewire_link']
+    outputs = ['onewire_network']
+    annotations = (
+        ('text', 'Human-readable text'),
+    )
+
+    def __init__(self):
+        self.samplerate = 1
+
+        self.bitTimeLast   = 0
+        self.bitTimeNow    = 0
+        self.bitDelay01    = 0
+        self.bitTimeOut01  = 1
+
+        self.byteTimeLast   = 0
+        self.byteTimeNow    = 0
+        self.byteDelay01    = 0
+        self.byteTimeOut01  = 1
+        self.byteCNT        = 1
+
+        self.ss_block = 0
+        self.es_block = 0
+        self.state = 'COMMAND'
+        self.bit_cnt = 0
+        self.search = 'P'
+        self.data_p = 0x0
+        self.data_n = 0x0
+        self.data = 0x0
+        self.rom = 0x0000000000000000
+
+    def start(self):
+        self.out_python = self.register(srd.OUTPUT_PYTHON)
+        self.out_ann = self.register(srd.OUTPUT_ANN)
+
+    def putx(self, data):
+        # Helper function for most annotations.
+        self.put(self.ss_block, self.es_block, self.out_ann, data)
+
+    def puty(self, data):
+        # Helper function for most protocol packets.
+        self.put(self.ss_block, self.es_block, self.out_python, data)
+
+    def decode(self, ss, es, data):
+        code, val = data
+
+        # State machine.
+        if code == 'RESET/PRESENCE':
+            self.search = 'P'
+            self.bit_cnt = 0
+            self.put(ss, es, self.out_ann,
+                     [0, ['Reset/presence: %s' % ('true' if val else 'false')]])
+            self.put(ss, es, self.out_python, ['RESET/PRESENCE', val])
+            self.state = 'COMMAND'
+            return
+
+        # For now we're only interested in 'RESET/PRESENCE' and 'BIT' packets.
+        if code != 'BIT':
+            return
+
+        self.bitTimeNow = ss 
+        self.bitDelay01  = self.bitTimeNow - self.bitTimeLast 
+        self.bitTimeLast = self.bitTimeNow 
+        if  self.bitDelay01 > self.bitTimeOut01 :
+            if self.bit_cnt != 0 :
+                self.putx([0, ['%d :gap' % self.bit_cnt ]])
+                self.bit_cnt = 0 
+
+        if self.state == 'COMMAND':
+            # Receiving and decoding a ROM command.
+            if self.onewire_collect(8, val, ss, es) == 0:
+                return
+
+            self.byteTimeNow = ss 
+            self.byteDelay01  = self.byteTimeNow - self.byteTimeLast 
+            self.byteTimeLast = self.byteTimeNow 
+            if  self.byteDelay01 > self.byteTimeOut01 :
+                self.byteCNT = 1 
+
+            #self.putx([0, ['%02x :my %s , %s ; %s , %s ' % (self.data, ss , es , self.samplerate , self.bitTimeOut01 ) ]])
+            #self.putx([0, ['%02x :my' % self.data ]])
+            #self.putx([0, ['%02x' % self.data ]])
+            self.putx([0, ['%02x=%d' % (self.data , self.byteCNT)]])
+            self.byteCNT += 1 
+
+    # Data collector.
+    def onewire_collect(self, length, val, ss, es):
+        # Storing the sample this sequence begins with.
+        if self.bit_cnt == 1:
+            self.ss_block = ss
+        self.data = self.data & ~(1 << self.bit_cnt) | (val << self.bit_cnt)
+        self.bit_cnt += 1
+        # Storing the sample this sequence ends with.
+        # In case the full length of the sequence is received, return 1.
+        if self.bit_cnt == length:
+            self.es_block = es
+            self.data = self.data & ((1 << length) - 1)
+            self.bit_cnt = 0
+            return 1
+        else:
+            return 0
+
+    # Search collector.
+    def onewire_search(self, length, val, ss, es):
+        # Storing the sample this sequence begins with.
+        if (self.bit_cnt == 0) and (self.search == 'P'):
+            self.ss_block = ss
+
+        if self.search == 'P':
+            # Master receives an original address bit.
+            self.data_p = self.data_p & ~(1 << self.bit_cnt) | \
+                          (val << self.bit_cnt)
+            self.search = 'N'
+        elif self.search == 'N':
+            # Master receives a complemented address bit.
+            self.data_n = self.data_n & ~(1 << self.bit_cnt) | \
+                          (val << self.bit_cnt)
+            self.search = 'D'
+        elif self.search == 'D':
+            # Master transmits an address bit.
+            self.data = self.data & ~(1 << self.bit_cnt) | (val << self.bit_cnt)
+            self.search = 'P'
+            self.bit_cnt += 1
+
+        # Storing the sample this sequence ends with.
+        # In case the full length of the sequence is received, return 1.
+        if self.bit_cnt == length:
+            self.es_block = es
+            self.data_p = self.data_p & ((1 << length) - 1)
+            self.data_n = self.data_n & ((1 << length) - 1)
+            self.data = self.data & ((1 << length) - 1)
+            self.search = 'P'
+            self.bit_cnt = 0
+            return 1
+        else:
+            return 0
+
+    def metadata(self, key, value):
+        if key != srd.SRD_CONF_SAMPLERATE:
+            return
+        self.samplerate = value
+        self.bitTimeOut01   = value / 100 /1000 * 1.1
+        self.byteTimeOut01  = value / 100 /1000 * 1.1 * 9.2
+        ## byte use 9.2 bit
+

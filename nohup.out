@@ -1,0 +1,1397 @@
+rm -fr DSView-0.98
+rm -fr /home/bootH/DsView/runDSview_0.98
+[ -d DSView-0.98 ] || tar xfz 0.98.tar.gz
+cd DSView-0.98/libsigrok4DSL/ && ./autogen.sh 
+Generating build system...
+configure.ac:39: installing 'autostuff/ar-lib'
+configure.ac:39: installing 'autostuff/compile'
+configure.ac:37: installing 'autostuff/missing'
+Makefile.am: installing 'autostuff/depcomp'
+parallel-tests: installing 'autostuff/test-driver'
+cd DSView-0.98/libsigrok4DSL/ && ./configure --prefix=/home/bootH/DsView/runDSview_0.98
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking whether ln -s works... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.22... yes
+checking for library containing pow... -lm
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.16... yes
+checking for GLIB - version >= 2.32.0... yes (version 2.54.1)
+checking for libzip... yes
+checking for libserialport... no
+checking for libusb... yes
+checking for check... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for int8_t... yes
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for size_t... yes
+checking for gettimeofday... yes
+checking for memset... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strncasecmp... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for strtoull... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating version.h
+config.status: creating hardware/Makefile
+config.status: creating hardware/demo/Makefile
+config.status: creating hardware/common/Makefile
+config.status: creating hardware/DSL/Makefile
+config.status: creating input/Makefile
+config.status: creating output/Makefile
+config.status: creating libsigrok4DSL.pc
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+libsigrok configuration summary:
+
+  - Package version (major.minor.micro):    0.2.0
+  - Library version (current:revision:age): 1:2:0
+  - Prefix: /home/bootH/DsView/runDSview_0.98
+  - Building on: x86_64-pc-linux-gnu
+  - Building for: x86_64-pc-linux-gnu
+
+Detected libraries:
+
+  - glib-2.0 >= 2.32.0: yes (2.54.1)
+  - libzip >= 0.10: yes (1.1.2)
+  - libserialport >= 0.1.0: no
+  - libusb-1.0 >= 1.0.9: yes (1.0.21)
+  - libftdi >= 0.16: no
+  - libudev >= 151: yes (234)
+  - alsa >= 1.0: no
+  - check >= 0.9.4: yes (0.10.0)
+
+Enabled hardware drivers:
+
+  - demo............................ yes
+  - DreamSourceLab.................. yes
+
+cd DSView-0.98/libsigrok4DSL/ && make
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/libsigrok4DSL'
+make  all-recursive
+Making all in hardware
+Making all in demo
+  CC       libsigrok4DSL_hw_demo_la-demo.lo
+  CCLD     libsigrok4DSL_hw_demo.la
+Making all in common
+  CC       libsigrok4DSL_hw_common_la-ezusb.lo
+  CC       libsigrok4DSL_hw_common_la-usb.lo
+  CCLD     libsigrok4DSL_hw_common.la
+Making all in DSL
+  CC       libsigrok4DSL_hw_dsl_la-command.lo
+  CC       libsigrok4DSL_hw_dsl_la-dsl.lo
+  CC       libsigrok4DSL_hw_dsl_la-dslogic.lo
+  CC       libsigrok4DSL_hw_dsl_la-dscope.lo
+  CCLD     libsigrok4DSL_hw_dsl.la
+  CCLD     libsigrok4DSLhardware.la
+Making all in input
+  CC       libsigrok4DSLinput_la-in_binary.lo
+  CC       libsigrok4DSLinput_la-in_vcd.lo
+  CC       libsigrok4DSLinput_la-in_wav.lo
+  CC       libsigrok4DSLinput_la-input.lo
+  CCLD     libsigrok4DSLinput.la
+Making all in output
+  CC       libsigrok4DSLoutput_la-output.lo
+  CC       libsigrok4DSLoutput_la-csv.lo
+  CC       libsigrok4DSLoutput_la-vcd.lo
+  CC       libsigrok4DSLoutput_la-gnuplot.lo
+  CC       libsigrok4DSLoutput_la-srzip.lo
+  CCLD     libsigrok4DSLoutput.la
+Making all in tests
+make[3]: Nothing to be done for 'all'.
+  CC       backend.lo
+  CC       dsdevice.lo
+  CC       session.lo
+  CC       session_file.lo
+  CC       session_driver.lo
+  CC       hwdriver.lo
+  CC       strutil.lo
+  CC       log.lo
+  CC       trigger.lo
+  CC       version.lo
+  CC       error.lo
+  CC       std.lo
+  CCLD     libsigrok4DSL.la
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/libsigrok4DSL'
+cd DSView-0.98/libsigrok4DSL/ && make install
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/libsigrok4DSL'
+Making install in hardware
+Making install in demo
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+Making install in common
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+Making install in DSL
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+Making install in input
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+Making install in output
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+Making install in tests
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/lib'
+ /bin/bash ./libtool --silent  --mode=install /usr/bin/install -c   libsigrok4DSL.la '/home/bootH/DsView/runDSview_0.98/lib'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/include/libsigrok4DSL'
+ /usr/bin/install -c -m 644 libsigrok.h proto.h version.h '/home/bootH/DsView/runDSview_0.98/include/libsigrok4DSL'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsigrok4DSL.pc '/home/bootH/DsView/runDSview_0.98/lib/pkgconfig'
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/libsigrok4DSL'
+cd DSView-0.98/libsigrokdecode4DSL/ && ./autogen.sh 
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: creating directory autostuff
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'autostuff'.
+libtoolize: copying file 'autostuff/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:34: installing 'autostuff/ar-lib'
+configure.ac:34: installing 'autostuff/compile'
+configure.ac:36: installing 'autostuff/config.guess'
+configure.ac:36: installing 'autostuff/config.sub'
+configure.ac:32: installing 'autostuff/install-sh'
+configure.ac:32: installing 'autostuff/missing'
+Makefile.am: installing './INSTALL'
+Makefile.am: installing 'autostuff/depcomp'
+parallel-tests: installing 'autostuff/test-driver'
+autoreconf: Leaving directory `.'
+cd DSView-0.98/libsigrokdecode4DSL/ && ./configure --prefix=/home/bootH/DsView/runDSview_0.98
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking whether ln -s works... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.22... yes
+checking for python3.4... no
+checking for python3.3... no
+checking for python3.2... no
+checking for python3... python3
+checking compiler flag for C99... -std=c99
+checking compiler flag for visibility... -fvisibility=hidden
+checking which C compiler warning flags to use... -Wall -Wextra -Wmissing-prototypes
+checking for library containing pow... -lm
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for LIBSIGROKDECODE... yes
+checking for TESTS... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libsigrokdecode4DSL.pc
+config.status: creating config.h
+config.status: creating version.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+libsigrokdecode configuration summary:
+ - Package version................. 0.4.0
+ - Library ABI version............. 2:0:0
+ - Prefix.......................... /home/bootH/DsView/runDSview_0.98
+ - Building on..................... x86_64-pc-linux-gnu
+ - Building for.................... x86_64-pc-linux-gnu
+
+Compile configuration:
+ - C compiler...................... gcc
+ - C compiler version.............. gcc (Ubuntu 7.2.0-8ubuntu3) 7.2.0
+ - C compiler flags................ -g -O2
+ - Additional C compiler flags..... -std=c99 -fvisibility=hidden
+ - C compiler warnings............. -Wall -Wextra -Wmissing-prototypes
+
+Detected libraries (required):
+ - glib-2.0 >= 2.24.0.............. 2.54.1
+ - python3 >= 3.2.................. 3.6
+
+Detected libraries (optional):
+ - check >= 0.9.4.................. 0.10.0
+
+cd DSView-0.98/libsigrokdecode4DSL/ && make
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/libsigrokdecode4DSL'
+make  all-am
+  CC       srd.lo
+  CC       session.lo
+  CC       decoder.lo
+  CC       instance.lo
+  CC       log.lo
+  CC       util.lo
+  CC       exception.lo
+  CC       module_sigrokdecode.lo
+  CC       type_decoder.lo
+  CC       type_logic.lo
+  CC       error.lo
+  CC       version.lo
+  CCLD     libsigrokdecode4DSL.la
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/libsigrokdecode4DSL'
+cd DSView-0.98/libsigrokdecode4DSL/ && make install
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/libsigrokdecode4DSL'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/lib'
+ /bin/bash ./libtool --silent  --mode=install /usr/bin/install -c   libsigrokdecode4DSL.la '/home/bootH/DsView/runDSview_0.98/lib'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/include/libsigrokdecode4DSL'
+ /usr/bin/install -c -m 644 version.h '/home/bootH/DsView/runDSview_0.98/include/libsigrokdecode4DSL'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsigrokdecode4DSL.pc '/home/bootH/DsView/runDSview_0.98/lib/pkgconfig'
+ /bin/mkdir -p '/home/bootH/DsView/runDSview_0.98/include/libsigrokdecode4DSL'
+ /usr/bin/install -c -m 644 libsigrokdecode.h '/home/bootH/DsView/runDSview_0.98/include/libsigrokdecode4DSL'
+make  install-data-hook
+/bin/mkdir -p /home/bootH/DsView/runDSview_0.98/share/libsigrokdecode4DSL/decoders
+python3 ./tools/install-decoders \
+	-i ./decoders -o /home/bootH/DsView/runDSview_0.98/share/libsigrokdecode4DSL/decoders
+Installing 75 protocol decoders:
+onewire_network ds1307 z80 wiegand arm_etmv3 sdcard_spi i2s i2cdemux 0-spi dsi 
+edid jtag rgb_led_ws281x swd rtc8564 tca6408a mlx90614 arm_itm 1-uart modbus 
+rfm12 i2cfilter 1-spi guess_bitrate mrf24j40 midi stepper_motor lpc ds28ea00 qi 
+eeprom93cxx max7219 adf435x 0-uart timing nrf24l01 usb_signalling spiflash 
+1-i2c t55xx nunchuk 0-i2c lm75 usb_packet pwm adns5020 xfp parallel eeprom24xx 
+maxim_ds28ea00 jtag_stm32 onewire_link am230x pan1321 ir_rc5 ssi32 dcf77 spdif 
+ir_nec gpib mdio usb_request ade77xx dmx512 jitter aud mxc6225xu em4100 
+arm_tpiu usb_power_delivery avr_isp tlc5620 sdcard_sd rgb_led_spi can 
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/libsigrokdecode4DSL'
+cd DSView-0.98/DSView/ && \
+	PKG_CONFIG_PATH=/home/bootH/DsView/runDSview_0.98/lib/pkgconfig \
+	cmake . -DCMAKE_INSTALL_PREFIX=/home/bootH/DsView/runDSview_0.98
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- The C compiler identification is GNU 7.2.0
+-- The CXX compiler identification is GNU 7.2.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Checking for modules 'libsigrok4DSL >= 0.2.0;libusb-1.0 >= 1.0.16;libzip >= 0.10;libsigrokdecode4DSL>=0.4.0'
+--   Found libsigrok4DSL , version 0.2.0
+--   Found libusb-1.0 , version 1.0.21
+--   Found libzip , version 1.1.2
+--   Found libsigrokdecode4DSL, version 0.4.0
+-- Using Qt5
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Boost version: 1.62.0
+-- Found the following Boost libraries:
+--   filesystem
+--   system
+--   thread
+--   chrono
+--   date_time
+--   atomic
+-- Found libusb-1.0:
+--  - Includes: /usr/include
+--  - Libraries: /usr/lib/x86_64-linux-gnu/libusb-1.0.so
+-- Found LIBZIP: /usr/lib/x86_64-linux-gnu/libzip.so  
+-- Found FFTW threads: /usr/lib/x86_64-linux-gnu/libfftw3f_threads.so
+-- Found FFTW: /usr/lib/x86_64-linux-gnu/libfftw3.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/bootH/DsView/DSView-0.98/DSView
+cd DSView-0.98/DSView/ && make
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[2]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[3]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+[  1%] Generating qrc_style.cpp
+[  1%] Generating pv/moc_sigsession.cpp
+[  2%] Generating pv/moc_mainwindow.cpp
+[  2%] Generating pv/dialogs/moc_deviceoptions.cpp
+[  3%] Generating pv/prop/moc_property.cpp
+[  3%] Generating pv/prop/moc_int.cpp
+[  4%] Generating pv/prop/moc_enum.cpp
+[  4%] Generating pv/prop/moc_double.cpp
+[  5%] Generating pv/prop/moc_bool.cpp
+[  5%] Generating pv/toolbars/moc_samplingbar.cpp
+[  6%] Generating pv/view/moc_viewport.cpp
+[  6%] Generating pv/view/moc_view.cpp
+[  7%] Generating pv/view/moc_timemarker.cpp
+[  7%] Generating pv/view/moc_ruler.cpp
+[  8%] Generating pv/view/moc_header.cpp
+[  8%] Generating pv/view/moc_cursor.cpp
+[  9%] Generating pv/toolbars/moc_trigbar.cpp
+[  9%] Generating pv/toolbars/moc_filebar.cpp
+[ 10%] Generating pv/dock/moc_protocoldock.cpp
+[ 10%] Generating pv/dock/moc_triggerdock.cpp
+[ 11%] Generating pv/dock/moc_measuredock.cpp
+[ 11%] Generating pv/dock/moc_searchdock.cpp
+[ 12%] Generating pv/toolbars/moc_logobar.cpp
+[ 12%] Generating pv/dialogs/moc_about.cpp
+[ 13%] Generating pv/dialogs/moc_search.cpp
+[ 13%] Generating pv/dock/moc_dsotriggerdock.cpp
+[ 14%] Generating pv/view/moc_trace.cpp
+[ 14%] Generating pv/view/moc_selectableitem.cpp
+[ 15%] Generating pv/data/moc_decoderstack.cpp
+[ 15%] Generating pv/view/moc_decodetrace.cpp
+[ 16%] Generating pv/widgets/moc_fakelineedit.cpp
+[ 16%] Generating pv/widgets/moc_decodermenu.cpp
+[ 17%] Generating pv/widgets/moc_decodergroupbox.cpp
+[ 17%] Generating pv/prop/moc_string.cpp
+[ 18%] Generating pv/device/moc_devinst.cpp
+[ 18%] Generating pv/dialogs/moc_storeprogress.cpp
+[ 19%] Generating pv/moc_storesession.cpp
+[ 19%] Generating pv/view/moc_devmode.cpp
+[ 20%] Generating pv/dialogs/moc_waitingdialog.cpp
+[ 21%] Generating pv/dialogs/moc_dsomeasure.cpp
+[ 21%] Generating pv/dialogs/moc_calibration.cpp
+[ 22%] Generating pv/dialogs/moc_protocollist.cpp
+[ 22%] Generating pv/dialogs/moc_protocolexp.cpp
+[ 23%] Generating pv/dialogs/moc_fftoptions.cpp
+[ 23%] Generating pv/data/moc_mathstack.cpp
+[ 24%] Generating pv/view/moc_mathtrace.cpp
+[ 24%] Generating pv/widgets/moc_viewstatus.cpp
+[ 25%] Generating pv/toolbars/moc_titlebar.cpp
+[ 25%] Generating pv/moc_mainframe.cpp
+[ 26%] Generating pv/widgets/moc_border.cpp
+[ 26%] Generating pv/dialogs/moc_dsmessagebox.cpp
+[ 27%] Generating pv/dialogs/moc_shadow.cpp
+[ 27%] Generating pv/dialogs/moc_dsdialog.cpp
+[ 28%] Generating pv/dialogs/moc_interval.cpp
+[ 28%] Generating qrc_DSView.cpp
+Scanning dependencies of target DSView
+make[3]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[3]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+[ 28%] Building CXX object CMakeFiles/DSView.dir/main.cpp.o
+[ 29%] Building CXX object CMakeFiles/DSView.dir/pv/sigsession.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.cpp:27:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.cpp:30:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.cpp:30:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.cpp:151:74: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void SigSession::set_device(boost::shared_ptr<device::DevInst> dev_inst) throw(QString)
+                                                                          ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.cpp:189:41: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void SigSession::set_file(QString name) throw(QString)
+                                         ^~~~~
+[ 29%] Building CXX object CMakeFiles/DSView.dir/pv/mainwindow.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.cpp:50:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.cpp:53:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.cpp:53:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+[ 30%] Building CXX object CMakeFiles/DSView.dir/pv/devicemanager.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/devicemanager.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/devicemanager.cpp:25:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/devicemanager.cpp:26:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 30%] Building CXX object CMakeFiles/DSView.dir/pv/data/snapshot.cpp.o
+[ 31%] Building CXX object CMakeFiles/DSView.dir/pv/data/signaldata.cpp.o
+[ 31%] Building CXX object CMakeFiles/DSView.dir/pv/data/logicsnapshot.cpp.o
+[ 32%] Building CXX object CMakeFiles/DSView.dir/pv/data/logic.cpp.o
+[ 32%] Building CXX object CMakeFiles/DSView.dir/pv/data/analogsnapshot.cpp.o
+[ 33%] Building CXX object CMakeFiles/DSView.dir/pv/data/analog.cpp.o
+[ 33%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/deviceoptions.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/deviceoptions.h:44:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/deviceoptions.cpp:23:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 34%] Building CXX object CMakeFiles/DSView.dir/pv/prop/property.cpp.o
+[ 34%] Building CXX object CMakeFiles/DSView.dir/pv/prop/int.cpp.o
+[ 35%] Building CXX object CMakeFiles/DSView.dir/pv/prop/enum.cpp.o
+[ 35%] Building CXX object CMakeFiles/DSView.dir/pv/prop/double.cpp.o
+[ 36%] Building CXX object CMakeFiles/DSView.dir/pv/prop/bool.cpp.o
+[ 36%] Building CXX object CMakeFiles/DSView.dir/pv/prop/binding/binding.cpp.o
+[ 37%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/samplingbar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/samplingbar.cpp:32:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/samplingbar.cpp:35:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 37%] Building CXX object CMakeFiles/DSView.dir/pv/view/viewport.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/viewport.h:36,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/viewport.cpp:23:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/viewport.cpp:30:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 38%] Building CXX object CMakeFiles/DSView.dir/pv/view/view.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.cpp:41:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.cpp:45:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 38%] Building CXX object CMakeFiles/DSView.dir/pv/view/timemarker.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/timemarker.cpp:25:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/timemarker.cpp:27:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/timemarker.cpp:27:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+[ 39%] Building CXX object CMakeFiles/DSView.dir/pv/view/signal.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/signal.cpp:30:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/signal.cpp:31:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 40%] Building CXX object CMakeFiles/DSView.dir/pv/view/ruler.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/ruler.cpp:26:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/ruler.cpp:29:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 40%] Building CXX object CMakeFiles/DSView.dir/pv/view/logicsignal.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/logicsignal.cpp:32:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 41%] Building CXX object CMakeFiles/DSView.dir/pv/view/header.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/header.cpp:24:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/header.cpp:34:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 41%] Building CXX object CMakeFiles/DSView.dir/pv/view/cursor.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/cursor.cpp:26:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/cursor.cpp:27:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/cursor.cpp:27:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+[ 42%] Building CXX object CMakeFiles/DSView.dir/pv/view/analogsignal.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/analogsignal.cpp:30:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 42%] Building CXX object CMakeFiles/DSView.dir/pv/prop/binding/deviceoptions.cpp.o
+[ 43%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/trigbar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/trigbar.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/trigbar.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 43%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/filebar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/filebar.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/filebar.cpp:30:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/filebar.cpp:31:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 44%] Building CXX object CMakeFiles/DSView.dir/pv/dock/protocoldock.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/protocoldock.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/protocoldock.cpp:25:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 44%] Building CXX object CMakeFiles/DSView.dir/pv/dock/triggerdock.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/triggerdock.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/triggerdock.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 45%] Building CXX object CMakeFiles/DSView.dir/pv/dock/measuredock.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/measuredock.cpp:25:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/measuredock.cpp:35:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/measuredock.cpp:35:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+[ 45%] Building CXX object CMakeFiles/DSView.dir/pv/dock/searchdock.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/searchdock.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/../dialogs/search.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/searchdock.cpp:28:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 46%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/logobar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/logobar.h:30:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/logobar.cpp:31:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 46%] Building CXX object CMakeFiles/DSView.dir/pv/data/groupsnapshot.cpp.o
+[ 47%] Building CXX object CMakeFiles/DSView.dir/pv/view/groupsignal.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/groupsignal.cpp:28:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 47%] Building CXX object CMakeFiles/DSView.dir/pv/data/group.cpp.o
+[ 48%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/about.cpp.o
+[ 48%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/search.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.h:32:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 49%] Building CXX object CMakeFiles/DSView.dir/pv/data/dsosnapshot.cpp.o
+[ 49%] Building CXX object CMakeFiles/DSView.dir/pv/data/dso.cpp.o
+[ 50%] Building CXX object CMakeFiles/DSView.dir/pv/view/dsosignal.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/dsosignal.cpp:29:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/dsosignal.cpp:31:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 50%] Building CXX object CMakeFiles/DSView.dir/pv/view/dsldial.cpp.o
+[ 51%] Building CXX object CMakeFiles/DSView.dir/pv/dock/dsotriggerdock.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/dsotriggerdock.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dock/dsotriggerdock.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dock/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 51%] Building CXX object CMakeFiles/DSView.dir/pv/view/trace.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/trace.cpp:32:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/trace.cpp:33:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 52%] Building CXX object CMakeFiles/DSView.dir/pv/view/selectableitem.cpp.o
+[ 52%] Building CXX object CMakeFiles/DSView.dir/pv/data/decoderstack.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/data/decoderstack.cpp:36:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 53%] Building CXX object CMakeFiles/DSView.dir/pv/data/decode/rowdata.cpp.o
+[ 53%] Building CXX object CMakeFiles/DSView.dir/pv/data/decode/row.cpp.o
+[ 54%] Building CXX object CMakeFiles/DSView.dir/pv/data/decode/decoder.cpp.o
+[ 54%] Building CXX object CMakeFiles/DSView.dir/pv/data/decode/annotation.cpp.o
+[ 55%] Building CXX object CMakeFiles/DSView.dir/pv/view/decodetrace.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/decodetrace.cpp:44:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/decodetrace.cpp:54:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 55%] Building CXX object CMakeFiles/DSView.dir/pv/prop/binding/decoderoptions.cpp.o
+[ 56%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/fakelineedit.cpp.o
+[ 56%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/decodermenu.cpp.o
+[ 57%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/decodergroupbox.cpp.o
+[ 57%] Building CXX object CMakeFiles/DSView.dir/pv/prop/string.cpp.o
+[ 58%] Building CXX object CMakeFiles/DSView.dir/pv/device/sessionfile.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.h:30:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.h:25,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.cpp:22:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.h:37:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.cpp:38:42: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void SessionFile::use(SigSession *owner) throw(QString)
+                                          ^~~~~
+[ 58%] Building CXX object CMakeFiles/DSView.dir/pv/device/inputfile.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.h:30:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.h:25,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.cpp:27:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.cpp:27:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.h:42:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.cpp:46:40: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void InputFile::use(SigSession *owner) throw(QString)
+                                        ^~~~~
+[ 59%] Building CXX object CMakeFiles/DSView.dir/pv/device/file.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.h:30:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/inputfile.h:42:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/file.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/sessionfile.h:37:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 60%] Building CXX object CMakeFiles/DSView.dir/pv/device/devinst.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.cpp:26:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.cpp:28:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.cpp:53:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void DevInst::use(SigSession *owner) throw(QString)
+                                      ^~~~~
+[ 60%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/storeprogress.cpp.o
+[ 61%] Building CXX object CMakeFiles/DSView.dir/pv/storesession.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/storesession.cpp:27:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/storesession.cpp:39:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 61%] Building CXX object CMakeFiles/DSView.dir/pv/view/devmode.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/devmode.cpp:23:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/devmode.cpp:26:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 62%] Building CXX object CMakeFiles/DSView.dir/pv/device/device.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:25:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/device/device.cpp:24:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/device.cpp:24:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/device.h:37:33: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+     void use(SigSession *owner) throw(QString);
+                                 ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/device.cpp:43:37: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+ void Device::use(SigSession *owner) throw(QString)
+                                     ^~~~~
+[ 62%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/waitingdialog.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/waitingdialog.h:33:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/waitingdialog.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 63%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/dsomeasure.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/dsomeasure.cpp:23:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 63%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/calibration.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/calibration.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/calibration.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 64%] Building CXX object CMakeFiles/DSView.dir/pv/data/decodermodel.cpp.o
+[ 64%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/protocollist.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocollist.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocollist.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocollist.cpp:29:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 65%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/protocolexp.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocolexp.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocolexp.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocolexp.cpp:35:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 65%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/fftoptions.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/fftoptions.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/fftoptions.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/fftoptions.cpp:29:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 66%] Building CXX object CMakeFiles/DSView.dir/pv/data/mathstack.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/data/mathstack.cpp:28:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 66%] Building CXX object CMakeFiles/DSView.dir/pv/view/mathtrace.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/mathtrace.cpp:29:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/mathtrace.cpp:34:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 67%] Building CXX object CMakeFiles/DSView.dir/dsapplication.cpp.o
+[ 67%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/viewstatus.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/widgets/viewstatus.cpp:29:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/widgets/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/widgets/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 68%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/titlebar.cpp.o
+[ 68%] Building CXX object CMakeFiles/DSView.dir/pv/mainframe.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/mainframe.cpp:25:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 69%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/border.cpp.o
+[ 69%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/dsmessagebox.cpp.o
+[ 70%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/shadow.cpp.o
+[ 70%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/dsdialog.cpp.o
+[ 71%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/interval.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/interval.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/interval.cpp:22:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 71%] Building CXX object CMakeFiles/DSView.dir/pv/moc_sigsession.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/moc_sigsession.cpp:9:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 72%] Building CXX object CMakeFiles/DSView.dir/pv/moc_mainwindow.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/mainwindow.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/moc_mainwindow.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 72%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_deviceoptions.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/deviceoptions.h:44:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_deviceoptions.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 73%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_property.cpp.o
+[ 73%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_int.cpp.o
+[ 74%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_enum.cpp.o
+[ 74%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_double.cpp.o
+[ 75%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_bool.cpp.o
+[ 75%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/moc_samplingbar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/moc_samplingbar.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 76%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_viewport.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/viewport.h:36,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/moc_viewport.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 76%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_view.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/samplingbar.h:38:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/view.h:40,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/view/moc_view.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/view/../toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 77%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_timemarker.cpp.o
+[ 77%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_ruler.cpp.o
+[ 78%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_header.cpp.o
+[ 78%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_cursor.cpp.o
+[ 79%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/moc_trigbar.cpp.o
+[ 80%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/moc_filebar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/filebar.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/moc_filebar.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 80%] Building CXX object CMakeFiles/DSView.dir/pv/dock/moc_protocoldock.cpp.o
+[ 81%] Building CXX object CMakeFiles/DSView.dir/pv/dock/moc_triggerdock.cpp.o
+[ 81%] Building CXX object CMakeFiles/DSView.dir/pv/dock/moc_measuredock.cpp.o
+[ 82%] Building CXX object CMakeFiles/DSView.dir/pv/dock/moc_searchdock.cpp.o
+[ 82%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/moc_logobar.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/logobar.h:30:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/moc_logobar.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/toolbars/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 83%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_about.cpp.o
+[ 83%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_search.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.h:32:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_search.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/search.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_search.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 84%] Building CXX object CMakeFiles/DSView.dir/pv/dock/moc_dsotriggerdock.cpp.o
+[ 84%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_trace.cpp.o
+[ 85%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_selectableitem.cpp.o
+[ 85%] Building CXX object CMakeFiles/DSView.dir/pv/data/moc_decoderstack.cpp.o
+[ 86%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_decodetrace.cpp.o
+[ 86%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/moc_fakelineedit.cpp.o
+[ 87%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/moc_decodermenu.cpp.o
+[ 87%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/moc_decodergroupbox.cpp.o
+[ 88%] Building CXX object CMakeFiles/DSView.dir/pv/prop/moc_string.cpp.o
+[ 88%] Building CXX object CMakeFiles/DSView.dir/pv/device/moc_devinst.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/device/moc_devinst.cpp:9:0:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 89%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_storeprogress.cpp.o
+[ 89%] Building CXX object CMakeFiles/DSView.dir/pv/moc_storesession.cpp.o
+[ 90%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_devmode.cpp.o
+[ 90%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_waitingdialog.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/waitingdialog.h:33:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_waitingdialog.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 91%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_dsomeasure.cpp.o
+[ 91%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_calibration.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/calibration.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_calibration.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 92%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_protocollist.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocollist.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_protocollist.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 92%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_protocolexp.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/protocolexp.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_protocolexp.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 93%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_fftoptions.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/fftoptions.h:35:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_fftoptions.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../device/devinst.h:56:38: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+  virtual void use(SigSession *owner) throw(QString);
+                                      ^~~~~
+[ 93%] Building CXX object CMakeFiles/DSView.dir/pv/data/moc_mathstack.cpp.o
+[ 94%] Building CXX object CMakeFiles/DSView.dir/pv/view/moc_mathtrace.cpp.o
+[ 94%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/moc_viewstatus.cpp.o
+[ 95%] Building CXX object CMakeFiles/DSView.dir/pv/toolbars/moc_titlebar.cpp.o
+[ 95%] Building CXX object CMakeFiles/DSView.dir/pv/moc_mainframe.cpp.o
+[ 96%] Building CXX object CMakeFiles/DSView.dir/pv/widgets/moc_border.cpp.o
+[ 96%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_dsmessagebox.cpp.o
+[ 97%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_shadow.cpp.o
+[ 97%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_dsdialog.cpp.o
+[ 98%] Building CXX object CMakeFiles/DSView.dir/pv/dialogs/moc_interval.cpp.o
+In file included from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/interval.h:31:0,
+                 from /home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/moc_interval.cpp:9:
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:135:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+/home/bootH/DsView/DSView-0.98/DSView/pv/dialogs/../sigsession.h:138:9: warning: dynamic exception specifications are deprecated in C++11 [-Wdeprecated]
+         throw(QString);
+         ^~~~~
+[ 98%] Building CXX object CMakeFiles/DSView.dir/qrc_DSView.cpp.o
+[ 99%] Building CXX object CMakeFiles/DSView.dir/qrc_style.cpp.o
+[100%] Linking CXX executable DSView
+make[3]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+[100%] Built target DSView
+make[2]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+cd DSView-0.98/DSView/ && make install
+make[1]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[2]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[3]: Entering directory '/home/bootH/DsView/DSView-0.98/DSView'
+make[3]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+[100%] Built target DSView
+make[2]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+Install the project...
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /home/bootH/DsView/runDSview_0.98/bin/DSView
+-- Set runtime path of "/home/bootH/DsView/runDSview_0.98/bin/DSView" to "/home/bootH/DsView/runDSview_0.98/lib"
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCope.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCope1.def.dsc
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicPlus.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic2.def.dsc
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic33.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicPlus.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCopeTest.dsc
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCope.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic1.def.dsc
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/license.txt
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicBasic.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicBasic.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicPro.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCope20.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic0.def.dsc
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCopeB20.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogicPro.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSLogic50.bin
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/res/DSCope20.fw
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/logo.png
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/NEWS
+-- Installing: /home/bootH/DsView/runDSview_0.98/share/DSView/ug.pdf
+-- Installing: /etc/udev/rules.d/DreamSourceLab.rules
+CMake Error at cmake_install.cmake:80 (file):
+  file INSTALL cannot copy file
+  "/home/bootH/DsView/DSView-0.98/DSView/DreamSourceLab.rules" to
+  "/etc/udev/rules.d/DreamSourceLab.rules".
+
+
+Makefile:85: recipe for target 'install' failed
+make[1]: *** [install] Error 1
+make[1]: Leaving directory '/home/bootH/DsView/DSView-0.98/DSView'
+Makefile:57: recipe for target 'b3' failed
+make: *** [b3] Error 2
