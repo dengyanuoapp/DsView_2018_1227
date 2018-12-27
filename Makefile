@@ -1,5 +1,5 @@
 
-VER:=0.98
+VER:=0.99
 pkg:=$(VER)
 pkgSRC1:=$(pkg).tar.gz
 pkgSRC2:=../srcDSview/$(pkgSRC1)
